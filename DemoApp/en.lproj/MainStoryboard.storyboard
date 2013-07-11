@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleAspectFit" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FOP-0h-9N7">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="568" id="Gpr-GF-Gqx"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="userDetailCell" rowHeight="100" id="Z3o-MS-Voc" customClass="UserDetailsCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIE-n6-cq4">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="r6e-27-xo1"/>
+                                                        <constraint firstAttribute="height" constant="50" id="ugl-FL-dMC"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjN-Jr-8Hn">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="WgS-g7-efj"/>
+                                                        <constraint firstAttribute="height" constant="20" id="aic-Pl-3bt"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pD-9z-Egz">
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="231" id="5yI-90-ZlE"/>
+                                                        <constraint firstAttribute="height" constant="65" id="hkc-Uz-LZj"/>
+                                                    </constraints>
+                                                </webView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="5pD-9z-Egz" secondAttribute="trailing" constant="20" type="default" id="3F7-MC-bgN"/>
+                                            <constraint firstItem="gIE-n6-cq4" firstAttribute="top" secondItem="Z3o-MS-Voc" secondAttribute="top" constant="5" id="4oG-Lw-CHf"/>
+                                            <constraint firstItem="tjN-Jr-8Hn" firstAttribute="leading" secondItem="Z3o-MS-Voc" secondAttribute="leading" constant="75" id="DcC-fd-hJT"/>
+                                            <constraint firstItem="gIE-n6-cq4" firstAttribute="leading" secondItem="Z3o-MS-Voc" secondAttribute="leading" constant="5" id="HXg-kK-kmU"/>
+                                            <constraint firstItem="5pD-9z-Egz" firstAttribute="top" secondItem="Z3o-MS-Voc" secondAttribute="top" constant="25" id="vHj-0Z-9Q1"/>
+                                            <constraint firstItem="tjN-Jr-8Hn" firstAttribute="top" secondItem="gIE-n6-cq4" secondAttribute="top" type="default" id="xuo-os-g6k"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="userImage" destination="gIE-n6-cq4" id="bF6-ov-WYG"/>
+                                            <outlet property="userName" destination="tjN-Jr-8Hn" id="yGe-7c-rbA"/>
+                                            <outlet property="userText" destination="5pD-9z-Egz" id="4fJ-gk-7Ve"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="J1n-cq-AoG"/>
+                                    <outlet property="delegate" destination="2" id="NhU-vn-Qxj"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="38g-N5-auA"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FOP-0h-9N7" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="9xj-Zl-spU"/>
+                            <constraint firstItem="FOP-0h-9N7" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="NNQ-mJ-kbT"/>
+                            <constraint firstItem="FOP-0h-9N7" firstAttribute="centerX" secondItem="38g-N5-auA" secondAttribute="centerX" type="default" id="REj-uK-691"/>
+                            <constraint firstItem="38g-N5-auA" firstAttribute="top" secondItem="3" secondAttribute="top" constant="249" id="ULb-B9-g39"/>
+                            <constraint firstItem="FOP-0h-9N7" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="YXu-NV-65Y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="38g-N5-auA" id="3W3-Kc-kg2"/>
+                        <outlet property="tableViewUserInfo" destination="FOP-0h-9N7" id="MxN-rQ-BXs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UserDetailsCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserDetailsCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="userImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="userName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="userText" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="tableViewUserInfo" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
